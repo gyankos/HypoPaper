@@ -2,12 +2,13 @@
 \usepackage{amsmath}
 \usepackage{amssymb}
 \usepackage{tikz}
+\usepackage{amsbsy}
 \usetikzlibrary{positioning,arrows,calc}
 
 \begin{document}
 \tikz{
   \node [rectangle,draw] (v1)  { Calbert$\colon$\textit{person} };
-  \node [right=of v1] (e1) { $\mathbf{\neg}$m1$\colon$\textit{movement}\;::\;\textit{fact} };
+  \node [right=of v1] (e1) { ${\color{red}\pmb{\neg}}$m1$\colon$\texttt{movement}\;::\;\textit{fact} };
   \node [rectangle,draw,below of=e1] (v2)  { ?whichplaces$\colon$\textit{loc.} };
 %
   \path

@@ -1,0 +1,23 @@
+\documentclass{standalone}
+\usepackage{amsmath}
+\usepackage{amssymb}
+\usepackage{tikz}
+\usetikzlibrary{positioning,arrows,calc}
+
+\begin{document}
+\tikz{
+  \node [rectangle,draw] (v1)  { Bradford$\colon$\textit{person} };
+  \node [right=of v1] (e1) { m1$\colon$\textit{movement}\;::\;\textit{fact} };
+  \node [rectangle,draw,below of=e1] (v2)  { jail$\colon$\textit{loc.} };
+  
+  \node [above=of e1] (e2) { ?whichcimes$\colon$\textit{crime}\;::\;\textit{fact} };
+%
+  \path
+% edge 1
+        (v1) [-]  edge node [above] {subj} (e1)
+        (v1) [-]  edge node [above] {subj} (e2)
+        (e1) [-]  edge node [right] {dest} (v2)
+        ;
+   \draw[dashed,->>] (e2) -- (e1);
+}
+\end{document}

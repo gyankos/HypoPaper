@@ -1,0 +1,27 @@
+\documentclass{standalone}
+\usepackage{amsmath}
+\usepackage{amssymb}
+\usepackage{tikz}
+\usetikzlibrary{positioning,arrows,calc}
+
+\begin{document}
+\tikz{
+  \node [rectangle,draw] (v1)  { ?who$\colon$\textit{person} };
+  \node [below right=of v1] (e1) { m1$\colon$\textit{movement}\;::\;\textit{fact} };
+  \node [rectangle,draw,right=of e1] (v2)  { Paris$\colon$\textit{loc.} };
+ 
+  \node [above right=of v1] (e2) { c1$\colon$\textit{crime}\;::\;\textit{fact} };
+  \node [rectangle,draw,right=of e2] (v3)  { robbery$\colon$\textit{crm.} };
+  \node [rectangle,draw,below right=of e2] (v4)  { bank$\colon$\textit{crm.} };
+%
+  \path
+% edge 1
+        (v1) [-]  edge node [above] {subj} (e1)
+        (v1) [-]  edge node [above] {subj} (e2)
+        (e1) [-]  edge node [above] {dest} (v2)
+        (e2) [-]  edge node [above] {type} (v3)
+        (e2) [-]  edge node [above] {obj.} (v4)
+        ;
+   \draw[dashed,->>] (e2) -- (e1);
+}
+\end{document}

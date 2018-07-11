@@ -1,0 +1,19 @@
+\documentclass{standalone}
+\usepackage{amsmath}
+\usepackage{amssymb}
+\usepackage{tikz}
+\usetikzlibrary{positioning,arrows,calc}
+
+\begin{document}
+\tikz{
+  \node [rectangle,draw] (v1)  { Calbert$\colon$\textit{person} };
+  \node [right=of v1] (e1) { $\mathbf{\neg}$m1$\colon$\textit{movement}\;::\;\textit{fact} };
+  \node [rectangle,draw,below of=e1] (v2)  { ?whichplaces$\colon$\textit{loc.} };
+%
+  \path
+% edge 1
+        (v1) [-]  edge node [above] {subj. } (e1)
+        (e1) [-]  edge node [right] {dest. } (v2)
+        ;
+}
+\end{document}

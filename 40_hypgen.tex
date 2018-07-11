@@ -1,0 +1,27 @@
+\section{Hypothesis Generation}\label{sec:hypgen}
+The hypotheses generator acts as the first part for the query evaluation, which identifies and aggregates the data in the Knowledge Base (approximately) matching the query.
+
+Let us now focus on hypotheses containing only one candidate as in Table \ref{tab:datahyp}; by using some geographical taxonomy as the one in Figure \ref{tree:geotree}, we may also coarsen the former candidates in order to get a better hypothesis' support: we have that the hypothesis with candidate (h.w.c.) \textit{Italy} is supported by three entities over five, while h.w.c. \textit{USA} or \textit{Minnesota} is supported by two entities over five. Please note that trivial hypotheses  should be discarded: an hypothesis is trivial when it contains all the other generated hypotheses (e.g., ``\textit{World}''). Please note that single candidates cannot be inconsistent with themselves, because conflicting candidates are separated in different hypotheses by definition (e.g., all the cities are different to each other, except from Rome that appears twice). Nevertheless, not all the hypotheses are inconsistent to each other (e.g., ``\textit{Rome}'' is compatible with ``\textit{Latium}'' and ``\textit{Italy}'', but not with ``\textit{Turin}'' and ``\textit{Piedmont}'').
+
+\begin{figure}
+\centering
+\begin{forest}
+	for tree={fit=band}
+	[\textit{location} [World
+	[Italy
+	[Latium [Rome]]
+	[Piedmont [Turin]]
+	]
+	[USA
+	[Minnesota
+	[Minneapolis]
+	[Duluth]
+	]
+	]
+	]
+	]
+\end{forest}
+\caption{An example of a geographical taxonomy for geographical dimensions (\textit{location}). Taxonomies may be used to aggregate compatible hypotheses.}\label{tree:geotree}
+\end{figure}
+
+Last, this approach can be generalized over multiple candidates by combining multiple hierarchies together as described in \cite{PetermannMBPR17}, where candidates may be extracted at different possible representation levels \texttt{[Is this enough or do I have to provide more details on how I would do that?]}.

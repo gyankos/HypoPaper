@@ -1,0 +1,26 @@
+% !TeX root = 00_paper_main.tex
+
+\section{Introduction}
+
+%%% Part 2: who is the addressee?
+Modern \textsc{Knowledge Base Management Systems} allow the ingestion of various data representations, such as relational, graph and full-text data \cite{ibmwatson}. Current KBMS usually ingest reliable data sources, such as encyclopaedic data \cite{ibmwatson}, business data \cite{Saha16} and medical journals and clinical data \cite{WANG201834}. 
+%%% Part 1: what I want to say precisely? Which is the broader problem that I want to solve?
+Despite such KBMS are able to reconcile different representation towards an uniform one \cite{Niu}, no technique is currently exploited for detecting \textit{contradicting} facts: in particular both data collected from on-line social network \cite{Lazer1094} or even medical diagnoses \cite{imihl} may contain contradictions.
+
+
+\begin{example}
+\textit{One of the simplest ways to find contradictions is to check whether there are facts that are both affirmed and denied at the same time. E.g., fact ``Casu Marzu is not a good cheese'' is a rebuttal of the fact ``Casu Marzu is a exquisite cheese''. Alternatively, we can focus on factual representations that do not allow the contemporaneity of two alternative hypotheses, thus violating a functional dependency. E.g., fact ``Yesterday Alice flew to Berlin'' contradicts ``Yesterday Alice took a trip to Kearney'' because Alice cannot be found in two different places at the same time.}
+\end{example}
+
+The inherent inconsistency of spurious data sources leads to the generation of conflicting hypotheses in response to a query. The inability of detecting such inconsistencies prohibits to weight how many KBMS facts either support or discard a given hypothesis, thus preventing from correctly ranking the generated hypotheses. As a result, this paper provides a formal definition of information inconsistencies, which is later on exploited to define such ranking metric; given a type of facts $t$ associated with a functional dependency $f$, we say that facts $c$ and $\tilde{c}$ of type $t$ are contradictory either if $\tilde{c}$ is the negation of $c$ or the coexistence of $c$ and $\tilde{c}$ in $t$ violates the functional dependency $f$. In order to meet our goal, we represent both events and relationships as multidimensional facts of different types $t$ via common-sense knowledge integration \cite{SpeerCH16}; to each type $t$ we associate a functional dependency by exploiting the ontologies' ability to describe a domain knowledge of interest \cite{FORTINEAU2015573}.
+
+%%% Part 4: communicate the Idea that we have (what is an inconsistency)
+\begin{example}
+\textit{Provide a semi-formal description of the previous example, and how former relationships and facts can be represented}
+\end{example}
+\medskip
+
+To improve efficiency and accuracy, we provide some link and rule mining techniques that {\color{red} [TODO]}. To summarize, we make the following contributions:
+\begin{itemize}
+	\item Section description here.
+\end{itemize}

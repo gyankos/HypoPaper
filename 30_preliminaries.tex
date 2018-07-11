@@ -1,0 +1,38 @@
+\section{Preliminaries}
+\begin{definition}[Knowledge Base]
+A \textbf{knowledge base} $KB$ is a graph containing ground atoms.
+\end{definition}
+\medskip
+
+\begin{definition}[Query]
+A \textbf{query} $q$ is a graph containing unbounded variables $?x$ to which a common-sense type $\tau$ is associated. $U_q$ is a finite set of all the unbounded atoms in $q$.
+\end{definition}
+\medskip
+
+\begin{definition}[Answer]
+An \textbf{answer} $A$ to a query $q$ over a knowledge base $KB$ (namely, $q(KB)=A$) is a set of distinct finite functions $\alpha:U_q\to KB$, named \textbf{candidate alternative}.
+
+We denote $\alpha\oplus q$ as the operation replacing each unbounded atom $?x$ in the query $q$ with the candidate $\alpha(?x)$.
+\end{definition}
+\medskip
+
+\begin{definition}[Hypothesis]
+An \textbf{hypothesis} $h$ supporting a candidate alternative $\alpha$ for query $q$ is a subgraph of $KB$ matching with $q$ ($ h\subseteq KB\wedge \textup{sim}(h,\alpha\oplus q)$).
+\end{definition}
+\medskip
+
+\begin{definition}[Support]
+For each hypothesis $h$ generated from a knowledge base $KB$, the support is a pair $s(h)=\braket{C,\tilde{C}}$, where $C$ is a set of ground $KB$ atoms validating $h$ and $\tilde{C}$ is a set of facts discarding the hypothesis.
+\end{definition}
+
+As a consequence of the support definition, we want enforce that the hypotheses scoring function $\sigma$ must enjoy the following properties:
+\begin{itemize}
+\item if $s(h)=\braket{C,\emptyset}$ with $C\neq \emptyset$, then $h$ is ``global truth'' in $KB$ and then $\sigma(h)=1$.
+\item if $s(h)=\braket{\emptyset, \tilde{C}}$ with $C\neq \emptyset$, then $h$ is ``global falsehood'' in $KB$ and then $\sigma(h)=0$.
+\item $0<\sigma(h)<1$ otherwise.
+\end{itemize}
+\medskip
+
+{\color{red}[More definitions compliant with the learning steps]} In the learning phase, we can approximate each query $q$ with a set of probable hypotheses that may be returned by the $KB$
+
+Less equal ($<=$) is $\leq$: \url{http://web.ift.uib.no/Teori/KURS/WRK/TeX/symALL.html}

@@ -1,0 +1,10 @@
+\section{Architecture}
+{\color{red} Fragment 1:} Our architecture is based upon the Closed World Assumption: each hypothesis that cannot be directly generated or inferred by our internal data representation should be considered inadmissible. 
+
+{\color{red} Fragment 2:} The system architecture which is used to query the data is defined by the following steps:
+\begin{enumerate}
+	\item Given a knowledge base $KB$, perform the query $q$ returning an answer $A=\Set{\alpha_1,\dots,\alpha_n}$
+	\item For each candidate alternative $\alpha_i$, return a set of hypotheses $\Set{h^1_i,\dots h^m_i}$
+	\item For each hypothesis $h^j_i$, evaluate its support $s(h^j_i)$ and rank it through $\sigma$.
+\end{enumerate}
+
